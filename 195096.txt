@@ -1,0 +1,112 @@
+- These commands create a remote repository, followed by a local repository, and then link the local repository to the remote repository.
+
+    echo "# SI_2023_lab1_195096" >> README.md
+    git init
+    git add README.md
+    git commit -m "Initial commit"
+    git branch -M master
+    git remote add origin https://github.com/vaskopavic/SI_2023_lab1_195096.git
+    git push -u origin master
+====================================
+- With these two commands, we add a README file and make a commit with the message "Initial commit".
+
+    git add README.md
+    git commit -m "Inital commit"
+====================================
+- With these two commands, we add the file SILab1.java and make a commit with the message "Add java class"
+
+    git add SILab1.java
+    git commit -m "Add java class"
+===================================
+- This command pushes the corresponding Java file and README file to the remote repository.
+    
+    git push origin master
+====================================
+- We create 3 new branches with the corresponding names.
+
+    git branch bug1
+    git branch bug2
+    git branch bug3
+====================================
+- We switch to the branch named bug1.
+    
+    git checkout bug1
+====================================
+- After making changes to the code where there was an error, I made a commit with an appropriate message and also used "-am" to add the file directly to the stage mode in Git.
+
+    git commit -am "Fix wrong loop for reading"
+====================================
+- We switch to the branch bug2.
+
+    git checkout bug2
+====================================
+- After fixing the code where there was an error, I made a commit with an appropriate message, and also used -am to add the file directly to the stage mode.
+
+    git commit -am "Fix wrong condition in filterOddNumbers"
+====================================
+- We switch to the branch bug3.
+
+    git checkout bug3
+====================================
+- After fixing the code where there was an error, I made a commit with an appropriate message, and also used -am to add the file directly to the stage mode.
+    
+    git commit -am "Fix method sumEvenNumbers"
+====================================
+- I added the appropriate file with the commit message "documentation" and synchronized it with the remote repository.
+
+    git checkout master
+====================================
+- I synchronized all branches with the remote repository.
+
+    git push -u origin bug1
+    git push -u origin bug2
+    git push -u origin bug3
+====================================
+- I merged the branch bug1 into master, there was no conflict and a fast-forward merge was used.
+Fast-forward
+SILab1.java | 2 +-
+
+    git merge bug1
+====================================
+- I synchronized the latest changes, i.e. merged bug1 with master.
+
+    git push origin master
+====================================
+- I merged the branch bug2 with master, there were no conflicts, and auto-merging was used, with the ort strategy.
+Auto-merging SILab1.java
+Merge made by the 'ort' strategy.
+SILab1.java | 10 +++++-----
+
+    git merge bug2
+====================================
+- I synchronized the latest changes, i.e. merged bug2 into master.
+
+    git push origin master
+====================================
+- We switch to the branch bug3.
+
+    git checkout bug3
+====================================
+- We are rebasing onto master in the branch bug3.
+    
+    git rebase master
+====================================
+- I merged the branch bug2 into master, there were no conflicts, and fast-forward was used.
+Fast-forward
+SILab1.java | 10 +++++-----
+
+    git merge bug3
+====================================
+- I synchronized the latest changes, i.e. merged bug3 with master.
+    
+    git push origin master
+====================================
+- I created a file where I attached the answers and all my steps so far.
+
+    git log
+====================================
+- We add the last 2 files, make a commit and synchronize with master.
+
+    git add logs.txt 195096.txt
+    git commit -m "Final commit"
+    git push origin master
